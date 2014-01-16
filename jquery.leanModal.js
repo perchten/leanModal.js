@@ -24,12 +24,16 @@
               
               	var modal_id = $(this).attr("href");
 
-				$("#lean_overlay").click(function() { 
-                     close_modal(modal_id);                    
+				$("#lean_overlay").click(function(e) {
+                     close_modal(modal_id);
+                     e.preventDefault();
+                     return false;
                 });
-                
-                $(o.closeButton).click(function() { 
-                     close_modal(modal_id);                    
+
+                $(o.closeButton).click(function(e) {
+                     close_modal(modal_id);
+                     e.preventDefault();
+                     return false;
                 });
                          	
               	var modal_height = $(modal_id).outerHeight();
@@ -54,7 +58,7 @@
         		$(modal_id).fadeTo(200,1);
 
                 e.preventDefault();
-                		
+                return false;
               	});
              
             });
